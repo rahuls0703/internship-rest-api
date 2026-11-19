@@ -1,3 +1,7 @@
 node_modules/
 .env
-internships.db
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal

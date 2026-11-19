@@ -55,6 +55,16 @@ List supports `search`, for example `/api/internships?search=python`.
 Successful responses use `success: true` and include `data` (or `pagination` for list responses).
 Errors use `success: false` and an `error` message. Validation errors also include `details`.
 
+### HTTP Status Codes
+
+| Status Code | Description |
+|---|---|
+| 200 OK | Request completed successfully |
+| 201 Created | Internship record created successfully |
+| 400 Bad Request | Invalid input or validation error |
+| 404 Not Found | Internship record not found |
+| 500 Internal Server Error | Unexpected server error |
+
 ## Quick tests (PowerShell)
 ```powershell
 # Health check
@@ -77,5 +87,20 @@ $body = @{
 Invoke-RestMethod -Method Post -Uri http://localhost:3000/api/internships -ContentType "application/json" -Body $body
 ```
 
-## Submission
-Push this project to a public GitHub repository and submit its repository URL.
+## Testing
+
+The API was tested using Postman and PowerShell.
+
+The following operations were verified:
+
+- Creating a new internship record.
+- Retrieving all internship records.
+- Retrieving an internship by ID.
+- Updating an existing internship record.
+- Deleting an internship record.
+- Validating incorrect or missing input data.
+- Handling invalid internship IDs.
+- Testing pagination using page and limit parameters.
+- Verifying data persistence after restarting the server.
+
+All the above operations returned the expected responses.
